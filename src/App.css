@@ -68,10 +68,8 @@ body{
    padding: 10px;
  }
 
- .temperature i{
-   font-size: 6rem;
-   color: rgb(46, 133, 167);
-   font-family: var(--Font-Poppins);
+ .meteorologia{
+   width: 7rem;
  }
 
  .descripcion{

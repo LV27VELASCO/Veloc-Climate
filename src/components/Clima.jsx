@@ -51,13 +51,13 @@ const Clima = () => {
                 </header>
                 <article className='hero-body'>
                     <div className='temperature'>
-                        <i class='bx bxs-cloud'></i>
+                        <img className='meteorologia' src={`http://openweathermap.org/img/wn/${climate?.weather[0].icon}.png`}/>
                         <h4>{click? `${kelvin} K`:`${celcius}°C`}</h4>
                     </div>
                     <div className='descripcion'>
                         <div className='title'>
                             <h4>
-                                <i class='bx bxs-quote-alt-left'></i>{climate?.weather[0].description}<i class='bx bxs-quote-alt-right' ></i>
+                                {<i class='bx bxs-quote-alt-left'></i>}{climate?.weather[0].description}<i class='bx bxs-quote-alt-right' ></i>
                             </h4>
                         </div>
                         <div className='datos'>
