@@ -52,7 +52,7 @@ const Clima = () => {
                 <article className='hero-body'>
                     <div className='temperature'>
                         <img className='meteorologia' src={`http://openweathermap.org/img/wn/${climate?.weather[0].icon}.png`}/>
-                        <h4>{click? `${kelvin} K`:`${celcius}°C`}</h4>
+                        <h4>{click? `${celcius}°C`:`${kelvin} K`}</h4>
                     </div>
                     <div className='descripcion'>
                         <div className='title'>
@@ -69,7 +69,7 @@ const Clima = () => {
                     </div>
                 </article>
                 <div className='boton'>
-                <button onClick={onclick}>{click?'Change to °C':'Change to K'}</button>
+                <button onClick={onclick}>{click?'Change to K':'Change to °C'}</button>
                 </div>
             </section >
         </main >
