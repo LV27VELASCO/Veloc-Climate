@@ -1,0 +1,158 @@
+*{
+  margin: 0;
+}
+
+body{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --Font-Poppins:'Poppins', sans-serif;
+  --Font-Devanagari:'Tiro Devanagari Sanskrit', serif;
+}
+
+.App{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(25, 65, 77, 0.809);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.hero{
+  height: 100vh;
+  width: 100%;
+  background-image: url('./Imagenes/lluvia.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+
+ .Card{
+  width: 60%;
+   background-color: rgba(200, 213, 214, 0.616);
+   text-align: center;
+   padding: 10px;
+   border-radius: 10px;
+ }
+
+ .head{
+   padding: 10px;
+   font-family: var(--Font-Poppins);
+ }
+
+ .head>h1{
+  animation:tada;
+  animation-duration: 2s;
+  color: #162a3b;
+ }
+
+
+ .hero-body{
+  display: grid;
+  grid-template-columns: auto auto;
+ }
+
+ .temperature{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+ }
+
+ .temperature i{
+   font-size: 6rem;
+   color: rgb(46, 133, 167);
+   font-family: var(--Font-Poppins);
+ }
+
+ .descripcion{
+   padding: 10px;
+   font-family: var(--Font-Devanagari);
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+ }
+
+ 
+
+ .title>h4>i{
+   font-size: 15px;
+ }
+
+ .title{
+  padding: 5px 5px ;
+  font-size: 1.2rem;
+  font-family:var(--Font-Poppins)
+}
+
+ .datos>*{
+  display: flex;
+  gap: 10px;
+ }
+
+ .datos{
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items:flex-start;
+   gap:1rem;
+ }
+
+ .datos i{
+   font-size: 2rem;
+ }
+
+
+ .datos p{
+   display: flex;
+   align-items: center;
+ }
+ 
+.viento>i{
+  color: rgba(14, 138, 233, 0.838);
+  
+}
+
+.nube>i{
+  color: rgba(47, 85, 239, 0.842);
+}
+
+.presion>i{
+  color: rgba(237, 96, 71, 0.826);
+}
+
+
+
+.boton{
+  padding: 10px;
+}
+
+button{
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: var(--Font-Poppins);
+  font-weight: 600;
+  background-color: rgba(229, 229, 229, 0.712);
+}
+
+@media screen and (max-width:680px){
+  .hero-body{
+    grid-template-columns: auto;
+  }
+
+  .datos{
+    width: 98%;
+  }
+}
+
