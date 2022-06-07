@@ -1,12 +1,7 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
 
-const Clima = () => {
-
-
-
-    const [latLon, setLatLon] = useState({})
-    const [climate, setClimate] = useState()
+const Clima = ({climate}) => {
     const [click, setClick] = useState(true)
 
     const celcius= Math.round(climate?.main.temp - 273.15)
@@ -19,28 +14,6 @@ const Clima = () => {
         }
         else{setClick(false)}
     }
-
-    useEffect(() => {
-        const success = pos => {
-            const lat = pos.coords.latitude
-            const lon = pos.coords.longitude
-            setLatLon({ lat, lon })
-        }
-        navigator.geolocation.getCurrentPosition(success)
-    }, [])
-
-    useEffect(() => {
-        if (latLon.lat !== undefined) {
-
-            let appiKey = '21df043cd7d75c564588a9aa7e4fd464';
-            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latLon?.lat}&lon=${latLon?.lon}&appid=${appiKey}`
-            
-            axios.get(url)
-                .then(res => setClimate(res.data))
-                .catch(err => console.log(err.data))
-        }
-    }, [latLon])
-    
 
     return (
         <main className='hero'>
@@ -57,14 +30,14 @@ const Clima = () => {
                     <div className='descripcion'>
                         <div className='title'>
                             <h4>
-                                {<i class='bx bxs-quote-alt-left'></i>}{climate?.weather[0].description}<i class='bx bxs-quote-alt-right' ></i>
+                                {<i className='bx bxs-quote-alt-left'></i>}{climate?.weather[0].description}<i className='bx bxs-quote-alt-right' ></i>
                             </h4>
                         </div>
                         <div className='datos'>
-                            <p className='viento'><i class='bx bx-wind'></i><b>Wind Speed</b>{climate?.wind.speed} m/s</p>
-                            <p className='nube'><i class='bx bxl-google-cloud'></i><b>Cloude</b>{climate?.clouds.all}%</p>
-                            <p className='presion'><i class='bx bxs-thermometer'></i><b>Pressure</b>{climate?.main.pressure} mb</p>
-                            <p className='viento'><i class='bx bxs-droplet'></i><b>Humidity</b>{climate?.main.humidity}%</p>
+                            <p className='viento'><i className='bx bx-wind'></i><b>Wind Speed</b>{climate?.wind.speed} m/s</p>
+                            <p className='nube'><i className='bx bxl-google-cloud'></i><b>Cloude</b>{climate?.clouds.all}%</p>
+                            <p className='presion'><i className='bx bxs-thermometer'></i><b>Pressure</b>{climate?.main.pressure} mb</p>
+                            <p className='viento'><i className='bx bxs-droplet'></i><b>Humidity</b>{climate?.main.humidity}%</p>
                         </div>
                     </div>
                 </article>
